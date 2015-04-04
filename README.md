@@ -79,10 +79,10 @@ __("This is Original sentence ", 'sp');
 ###Link Class:
 this class to generate correct URLs
 ##HOW TO USE:
-- create object form class:
+- create object from class:
 ```php
 <?php
-$link = new Linke();
+$link = new Link();
 ```
 to create link to same page in other language:
 ```php
