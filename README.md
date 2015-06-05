@@ -243,5 +243,5 @@ id | title | content
  - add more features.
  
 -----------------
-If you have an idea tell me on (team@tlam.net).
-or visit to my blog on [php-tricks(http://www.t3lam.net)].
+If you have an idea tell me on (team@phptricks.org).
+or visit to my blog on [php-tricks(http://www.phptricks.org)].
