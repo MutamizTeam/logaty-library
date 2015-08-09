@@ -1,6 +1,6 @@
 #LOGATY
 ##PHP Library to create Multilingual websites
-####To Arabic go to : http://www.t3lam.net : للشرح باللغة العربية توجه الى (soon)
+To Arabic go to : http://www.phptricks.org : للشرح باللغة العربية توجه الى (soon)
 ##Features :
 - Use json format to translate statements.
 - Hide untranslated contents or Hint to visitors that the content is not available in his own language and he/she can browse content in another language.
