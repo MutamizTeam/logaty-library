@@ -238,7 +238,6 @@ id | title | content
 ***********
 ##Future plans :
  - FIX any bug found.
- - add MVC support.
  - rewrite DBContent class!
  - add more features.
  
