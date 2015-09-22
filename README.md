@@ -1,21 +1,19 @@
 #LOGATY
 ##PHP Library to create Multilingual websites
-<<<<<<< HEAD
-=======
-To Arabic go to : http://www.phptricks.org : للشرح باللغة العربية توجه الى (soon)
->>>>>>> 2f024099832043692cc79e2d85de16d2bc9e7044
+
 ##Features :
-- Use json format to translate statements.
-- Hide untranslated contents or Hint to visitors that the content is not available in his own language and he/she can browse content in another language.
-- Detect browser language.
-- Detect country language
-- Hide default language from url
-- Easy to use.
-- Generate links with correct language
-- support all languages.
-- Get Languages name in English and Mother tongue.
------
-#HOW TO USE :
+ Use json format to translate statements.
+ Hide untranslated contents or Hint to visitors that the content is not available in his own language and he/she can browse content in another language.
+ Detect browser language.
+ Detect country language
+ Hide default language from url
+ Easy to use.
+ Generate links with correct language
+ support all languages.
+ Get Languages name in English and Mother tongue.
+
+ 
+ #HOW TO USE :
 ####include library:
 ```php
 <?php 
@@ -239,22 +237,18 @@ id | title | content
 *****************
 ##NOTE : 
 ####All files was documented and explained using comments.
-***********
-<<<<<<< HEAD
+
+=======
+
+### What in my Plane ?????? 
+the new Version is not Completed yet  .
+I work hard to complete it, I thing in next week you can use this Library in your Projects :)
+
 ## Change LOG :
 * FIX retrieve content from database
 * CHANGE config structure
 * ADD new options structure
-=======
-##Future plans :
- - FIX any bug found.
- - rewrite DBContent class!
- - add more features.
->>>>>>> 2f024099832043692cc79e2d85de16d2bc9e7044
- 
-### What in my Plane ?????? 
-the new Version is not Completed yet  .
-I work hard to complete it, I thing in next week you can use this Library in your Projects :)
------------------
+
+
 If you have an idea tell me on (team@phptricks.org).
 or visit to my blog on [php-tricks(http://www.phptricks.org)].
