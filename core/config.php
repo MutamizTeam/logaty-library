@@ -1,4 +1,15 @@
 <?php
+
+
+############## Very Important Hint ##############
+#                                               #
+#                                               #
+#           DONT UNCOMMENT ANY THING HERE       #
+#                                               #
+#################################################
+#################################################
+
+
 /**
  * configuration file 
  * @author Moahammad Anzawi <m.anzawi2013@gmail.com>
@@ -6,12 +17,49 @@
  * @license GPL2
  * @version 1.0.0
  */
+#######Hints:######
+#    yes = true   #
+#    no = false   #
+###################
+
+/*
+ * All Configuration declear in config.ini
+ * 
+ * here you found documentation abut thats configure 
+ * 
+ * i mean here you find the option name and what ist mean
+ * and why we use
+ * 
+ * 
+ * 
+ */
+
 
 /**
- *
  * @global array $GLOBALS['langConfig'] store library configuration
  * @name $langConfig 
  */
+
+$GLOBALS['langConfig'] = parse_ini_file(ROOT . "config.ini", true);
+
+
+$GLOBALS['langConfig']['paths']['lang_files'] = ROOT . $GLOBALS['langConfig']['paths']['lang_files'];
+$GLOBALS['langConfig']['paths']['flags'] = ROOT . $GLOBALS['langConfig']['paths']['flags'];
+
+/*
+
+ *
+ *  To Chang This Init Values Go to 
+ * 
+ *  core/config.ini
+ *  
+ *  and change what you need 
+ * 
+ *  but read this document first (recommended) 
+ * 
+ * 
+ */
+/*
 $GLOBALS['langConfig'] = array(
     // database information
     'database' => array(
@@ -24,15 +72,15 @@ $GLOBALS['langConfig'] = array(
         // database charsit UTF-8 RECOMMENDED
         'charset'  => 'utf-8',
         // database name
-        'db_name'  => 'mlang',
+        'db_name'  => 'logaty',
         // database type (I mean  mysql, mysqli, pdo) just this types supported
         'db_type'  => 'pdo', 
         
         // translation table name
-        'table_name' => 'translation',
+        'table_name' => 'logaty_translation',
         // options table name (to get option from database)
         // see config file in demo-with-database folder to kearn more
-        'options_table' => '',
+        'options_table' => 'options',
         // colomns prefix ..
         /* 
          * ex : if you want create table for posts
@@ -51,29 +99,29 @@ $GLOBALS['langConfig'] = array(
          * if you want to use lang_name the table must be (arabic_post_title, arabic_post_content, english_post_title, english_post_content ...)
          * 
          */
-        'colmns_tag' => 'lang_code',
+        //'colmns_tag' => 'lang_code', // this option in Next Virsion
         
-    ),
+   /* ),
     
     // main options (settings)
     'options' => array(
         // defualt language for site
         'defualt_lang'              => 'en',
-        // true to enable detect browser language false to not
-        'detect_browser_lang'       => true,
-        // true to enable detect country language false to not
+        // yes to enable detect browser language no to not
+        'detect_browser_lang'       => 'yes',
+        // yes to enable detect country language no to not
         // NOTE: you cant enable detect_browser_lang and detect_country_lang in same time.
-        'detect_country_lang'       => false,
-        // true if you want to hide english content for visitor use another english language (Work with database content Only)
-        'hide_untranslated'         => true,
-        // true to alert visitor if the content not availabel in his language
-        // if hide_untranslated is false keep this false RECOMMENDED
-        'alert_user_available_lang' => true,
-        // true if you want to hide language information from url for defualt language
-        // in ex : if true and  the defualt language is arabic when visitor browse your site in arabic the url
+        'detect_country_lang'       => 'no',
+        // yes if you want to hide english content for visitor use another english language (Work with database content Only)
+        'hide_untranslated'         => 'yes',
+        // yes to alert visitor if the content not availabel in his language
+        // if hide_untranslated is no keep this no RECOMMENDED
+        'alert_user_available_lang' => 'yes',
+        // yes if you want to hide language information from url for defualt language
+        // in ex : if yes and  the defualt language is arabic when visitor browse your site in arabic the url
         // must be like this (www.my-site.come) but if visitor browse your site in other language
         //the url  must be like this (www.my-site.come?lang=en)
-        'hide_default_language'     => true,
+        'hide_default_language'     => 'yes',
     ),
     
     // enable the use of following languages (order=>language)
@@ -104,7 +152,7 @@ $GLOBALS['langConfig'] = array(
     ),
     // the language name in mother tongue
     'name_mother_tongue' => array(
-        'ar' => 'العربية',
+        'ar' => 'fvygbhujik',
         'en' => 'English',
         'es' => 'Spain',
         'de' => 'Deutsch',
@@ -159,3 +207,6 @@ $GLOBALS['langConfig'] = array(
         'es' => 'ltr'
     ),
 );
+
+
+*/

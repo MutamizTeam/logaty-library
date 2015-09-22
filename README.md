@@ -1,6 +1,5 @@
 #LOGATY
 ##PHP Library to create Multilingual websites
-####To Arabic go to : http://www.t3lam.net : للشرح باللغة العربية توجه الى (soon)
 ##Features :
 - Use json format to translate statements.
 - Hide untranslated contents or Hint to visitors that the content is not available in his own language and he/she can browse content in another language.
@@ -16,9 +15,9 @@
 ####include library:
 ```php
 <?php 
-require_once('logaty/core/intit.php');
+require_once('logaty/core/init.php');
 ```
-go to (logaty/core/config.php)
+go to (logaty/config.ini)
 and configure library how you want
 - choice default language.
 - enable/disable detected browser language.
@@ -141,9 +140,9 @@ echo languageNameIntongue('ar');
 ```
 4- get language direction:
 ```
-<html dir="<?php getDir() ?>">
+<html dir="<?php echo getDir() ?>">
 ```
-getDir() function return direction for current language.
+echo getDir() function return direction for current language.
 
 5- get default language:
 ```php
@@ -163,45 +162,23 @@ print_r(supportedLanguage());
 ------------
 ###to get content from database:
 first thing configure database .
-in (logaty/core/config.php).
-```php
-        // database host
-        'host'     => 'localhost',
-        // database username
-        'username' => 'root',
-        //database password
-        'password' => '',
-        // database charsit UTF-8 RECOMMENDED
-        'charset'  => 'utf-8',
-        // database name
-        'db_name'  => 'mlang',
-        // database type (I mean  mysql, mysqli, pdo) just this types supported
-        'db_type'  => 'pdo', 
-        
-        // translation table name
-        'table_name' => 'translation',
-        // options table name (to get option from database)
-        // see config file in demo-with-database folder to kearn more
-        'options_table' => '',
-        // colomns prefix ..
-        /* 
-         * ex : if you want create table for posts
-         * the table have (post_title, post_content)
-         * you must be create colomn for all languages enabled
-         * to be (ar_post_title, ar_post_content, en_post_title, en_post_content ...)
-         * 
-         * you can choise (lang_code, local_code, lang_name)
-         * 
-         * lang_code are(ar for arabic, en for english, es for espain ...)
-         * local_code are(en_US for or en_UK or any english country, AR_JO or AR_KW ...etc for arabic.... )
-         * lang_name the lanuage name in english (arabic, english ... etc)
-         * 
-         * if you want to use lang_code the table must be (ar_post_title, ar_post_content, en_post_title, en_post_content ...)
-         * if you want to use local_code the table must be (AR_post_title, AR_post_content, en-US_post_title, en-US_post_content ...)
-         * if you want to use lang_name the table must be (arabic_post_title, arabic_post_content, english_post_title, english_post_content ...)
-         * 
-         */
-        'colmns_tag' => 'lang_code',
+in (logaty/config.ini).
+```
+	[database]
+	; database host
+	host = "127.0.0.1"
+	; database username
+	username = "root"
+	;database password
+	password = ""
+	; database charsit UTF-8 RECOMMENDED
+	charset = "utf8"
+	; database name
+	db_name = "logaty"
+	; database type (I mean  mysql, mysqli, pdo) just this types supported
+	db_type = "pdo"
+	; translation table name
+	table_name = "logaty_translation"
 ```
 - create object :
 ```php
@@ -216,6 +193,29 @@ $db->get('content_table_name');
 ```php
 $db->get('content_table_name' , $content_ID);
 ```
+
+##Update Option : 
+ 
+ ```php
+ <?php 
+ 
+ setOption("option_name", "value", "config.ini_path");
+ // last parameter is optional (config.ini_path)
+ // by default the config.ini in the root folder
+ setOption("default_lang", "ar");
+ // or if you want to change config.ini file position
+  setOption("default_lang", "ar", ROOT . "config/config.ini");
+```
+
+##Get Option Value :
+```php
+<?php 
+
+getOption("option_path");
+
+getOption("database/host");
+```
+
 =============
 ## database tables structure:
 ####content table:
@@ -236,12 +236,15 @@ id | title | content
 ##NOTE : 
 ####All files was documented and explained using comments.
 ***********
-##Future plans :
- - FIX any bug found.
- - add MVC support.
- - rewrite DBContent class!
- - add more features.
+## Change LOG :
+* FIX retrieve content from database
+* CHANGE config structure
+* DELETE Config class
+* ADD new options structure
  
+### What in my Plane ?????? 
+the new Version is not Completed yet  .
+I work hard to complete it, I thing in next week you can use this Library in your Projects :)
 -----------------
 If you have an idea tell me on (team@phptricks.org).
 or visit to my blog on [php-tricks(http://www.phptricks.org)].

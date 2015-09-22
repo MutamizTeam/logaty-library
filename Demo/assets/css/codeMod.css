@@ -1,0 +1,73 @@
+pre{
+    background-color: #f4f4f4;
+    background-image: -webkit-gradient(linear, 60% 0%, 50% 100%, color-stop(50%, #f4f4f4), color-stop(50%, #e5e5e5));
+    background-image: -webkit-linear-gradient(#f4f4f4 50%,#e5e5e5 50%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #f4f4f4), color-stop(50%, #e5e5e5));
+    background-image: -webkit-linear-gradient(#f4f4f4 50%, #e5e5e5 50%);
+    background-image: linear-gradient(#f4f4f4 50%,#e5e5e5 50%);
+    -webkit-background-size: 38px 38px;
+    background-size: 38px 38px;
+    border: 1px solid #c5c5c5;
+    display: block;
+    line-height: 19px !important;
+    margin-bottom: 10px;
+    overflow: visible;
+    overflow-y: hidden;
+    white-space: pre-wrap;
+    font-family: monospace;
+    position: relative;
+    padding-left: 20px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .app-bar.fixed-top {
+        position: relative !important;
+    }
+    .page-content {
+        padding-top: 0 !important;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .page-content {
+        padding-top: 32px;
+    }
+}
+
+.function
+{
+    color: blue;
+    margin-left: px;
+}
+
+.class
+{
+    font-weight: bold;
+    color: #75bae9;
+}
+
+.string
+{
+    color: tomato;
+}
+
+.comment
+{
+    color: greenyellow;
+}
+
+.var
+{
+    color: #bf5a15;
+}
+
+.php
+{
+    color: pink;
+
+}
+.html
+{
+    color: #1891cb;
+}

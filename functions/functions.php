@@ -61,7 +61,7 @@ function avaliableLanguage($lang){
  * @return boolean
  */
 function supportedLanguage($lang){
-    if(in_array(strtolower($lang), Config::get('supported_languages'))){
+    if(in_array(strtolower($lang), getOption('supported_languages'))){
         return true;
     }
 
@@ -91,7 +91,7 @@ function currentLang(){
  * @return string
  */
 function defualtLang(){
-    return Config::get('options/defualt_lang');
+    return getOption('options/defualt_lang');
 }
 
 /**
@@ -100,7 +100,7 @@ function defualtLang(){
  * @return array
  */
 function enabledLanguagesList(){
-    return Config::get('enabled_languages');
+    return getOption('enabled_languages');
 }
 
 /**
@@ -110,7 +110,7 @@ function enabledLanguagesList(){
  * @return string
  */
 function languageNameInEnglish($lang){
-    return Config::get('languages_name/' . strtolower($lang));
+    return getOption('languages_name/' . strtolower($lang));
 }
 
 /**
@@ -120,7 +120,7 @@ function languageNameInEnglish($lang){
  * @return string
  */
 function languageNameIntongue($lang){
-    return Config::get('name_mother_tongue/' . strtolower($lang));
+    return getOption('name_mother_tongue/' . strtolower($lang));
 }
 
 /**
@@ -130,16 +130,16 @@ function languageNameIntongue($lang){
  * @return string
  */
 function languageLocalCode($lang){
-    return Config::get('langLocal/' . strtolower($lang));
+    return getOption('langLocal/' . strtolower($lang));
 }
 
 function getDir($lang = '') {
     if(!$lang) {
         $lang = currentLang();
     }
-    echo Config::get('lang_dir/' . strtolower($lang));
+    return  getOption('lang_dir/' . strtolower($lang));
 }
 
 function notValiableMessage($lang) {
-    return Config::get('not_available/' . $lang);
+    return getOption('not_available/' . $lang);
 }
