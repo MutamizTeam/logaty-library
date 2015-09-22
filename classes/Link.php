@@ -21,8 +21,7 @@ class Link
     /**
      * get initial value for $_domin
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->_domin = $_SERVER['SERVER_NAME'];
     }
 
@@ -32,35 +31,30 @@ class Link
      * @param string $link
      * @return string
      */
-    private function clean($link)
-    {
+    private function clean($link) {
         /**
          * @var array its $_GET array! (the variables in url)
          */
         $get = $_GET;
         // check if url have query string (remove all variables from url only!)
-        if(preg_match('/\?*/', $link))
-        {
+        if(preg_match('/\?*/', $link)) {
             $url = substr($link, 0, strpos($link, "?"));
             $link = str_replace($url, '', $link);
         }
         // if (lang) variable set in query string delet it
-        if(isset($_GET['lang']))
-        {
-
+        if(isset($_GET['lang'])) {
+            
             unset($get['lang']);
         }
         // if $get array is not empty set $_query to true 
-        if(count($get))
-        {
+        if(count($get)) {
             $this->_query = true;
             /**
              * @var string $qString create string query (Rewritten correctly)
              */
             $qString = "?";
 
-            foreach($get as $key => $val)
-            {
+            foreach($get as $key => $val) {
 
                 $qString .= $key . "=" . $val . "&";
             }
@@ -74,10 +68,8 @@ class Link
      * @param string $url
      * @return boolean
      */
-    private function validUrl($url)
-    {
-        if(filter_var($url, FILTER_VALIDATE_URL))
-            return true;
+    private function validUrl($url) {
+        if(filter_var($url, FILTER_VALIDATE_URL)) return true;
 
         return false;
     }
@@ -88,56 +80,45 @@ class Link
      * @param stribg $lang
      * @return string
      */
-    public function create($link = '', $lang = '')
-    {
+    public function create($link = '', $lang = '') {
         // check if hide_default_language option is enabled
-        $hideDefaultLanguage = (getOption('options/hide_default_language') == true ? true : false);
+        $hideDefaultLanguage = (Config::get('options/hide_default_language') ? true
+                            : false);
 
         // check if $link is empty
-        if(!$link)
-        {
+        if(!$link) {
             // create link (current page)
-            $url = $this->clean('http://' . $this->_domin . $_SERVER['PHP_SELF']);
+            $url = $this->clean('http://' . $this->_domin . $_SERVER['PHP_SELF']);//$_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']);
 
             // if hide_default_language option is enabled and $lang is defualte language return same link
-            if($hideDefaultLanguage && $lang == defualtLang())
-            {
+            if($hideDefaultLanguage && $lang == defualtLang()) {
                 return $url;
             }
 
             // check if url have query string
-            if($this->_query)
-            {
-                // if url have parameter then set 'lang' last parameter
+            if($this->_query) {
                 return $url . '&lang=' . $lang;
             }
 
-            // if url not have any parameter then 'lang' is first parameter
             return $url . '?lang=' . $lang;
         }
 
         // check if $link is a valide URL
-        if($this->validUrl($link))
-        {
-            parse_str(parse_url($link, PHP_URL_QUERY), $vars);
-            $this->_query =  count($vars) ? true : false;
+        if($this->validUrl($link)) {
             // if $lang is emty set it current language
-            if(!$lang)
-            {
+            if(!$lang) {
                 $lang = currentLang();
             }
 
-            // clean link (see clean method)
-            //$link = $this->clean($link);
+            // clean link
+            $link = $this->clean($link);
 
             // if $hideDefaultLanguage is true and $lang is default language return same link
-            if($hideDefaultLanguage && $lang == defualtLang())
-            {
+            if($hideDefaultLanguage && $lang == defualtLang()) {
                 return $link;
             }
-            // if $_query is true then url have other parameters
-            if($this->_query)
-            {
+            // if $_query is true 
+            if($this->_query) {
                 return $link . '&lang=' . $lang;
             }
 

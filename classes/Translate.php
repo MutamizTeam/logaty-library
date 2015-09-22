@@ -37,7 +37,7 @@ class Translate
      */
     public function __construct() {
         // get languages json files path
-        $this->_langFile = getOption('paths/lang_files');
+        $this->_langFile = Config::get('paths/lang_files');
         // check if file language exist
         if($this->getLangFile(currentLang())) {
             // set the language = current language
@@ -55,11 +55,11 @@ class Translate
       if($this->getLangFile($_GET['lang'])){
       $this->_theLang = $_GET['lang'];
       } else{
-      $this->_theLang = getOption('options/defualt_lang');
+      $this->_theLang = Config::get('options/defualt_lang');
       }
       return;
       }
-      $this->_theLang = getOption('options/defualt_lang');
+      $this->_theLang = Config::get('options/defualt_lang');
       } */
 
     /**
@@ -72,8 +72,6 @@ class Translate
         if(in_array($lang, enabledLanguagesList())) {
             $lang = languageLocalCode($lang);
 
-            if(is_array($this->_langFile));
-                return false;
             if(file_exists($this->_langFile . $lang . '.json')) {
                 return true;
             }

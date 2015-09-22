@@ -21,7 +21,7 @@ class Detect
      * @return string code language (2 digits)
      */
     public static function country() {
-        if(getOption('options/detect_country_lang') == false) {
+        if(!Config::get('options/detect_country_lang')) {
             return false;
         }
         /**
@@ -63,7 +63,7 @@ class Detect
      * @return string code language (2 digits)
      */
     public static function browser() {
-        if(getOption('options/detect_browser_lang') == false) {
+        if(!Config::get('options/detect_browser_lang')) {
             return false;
         }
         

@@ -1,5 +1,9 @@
 #LOGATY
 ##PHP Library to create Multilingual websites
+<<<<<<< HEAD
+=======
+To Arabic go to : http://www.phptricks.org : للشرح باللغة العربية توجه الى (soon)
+>>>>>>> 2f024099832043692cc79e2d85de16d2bc9e7044
 ##Features :
 - Use json format to translate statements.
 - Hide untranslated contents or Hint to visitors that the content is not available in his own language and he/she can browse content in another language.
@@ -236,11 +240,17 @@ id | title | content
 ##NOTE : 
 ####All files was documented and explained using comments.
 ***********
+<<<<<<< HEAD
 ## Change LOG :
 * FIX retrieve content from database
 * CHANGE config structure
-* DELETE Config class
 * ADD new options structure
+=======
+##Future plans :
+ - FIX any bug found.
+ - rewrite DBContent class!
+ - add more features.
+>>>>>>> 2f024099832043692cc79e2d85de16d2bc9e7044
  
 ### What in my Plane ?????? 
 the new Version is not Completed yet  .
